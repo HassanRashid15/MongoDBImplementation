@@ -15,7 +15,9 @@ const Signup = () => {
     setError("");
     const result = await signup(name, email, password);
     if (result.success) {
-      navigate("/dashboard");
+      setTimeout(() => {
+        navigate("/dashboard", { replace: true });
+      }, 100);
     } else {
       setError(result.message);
     }
